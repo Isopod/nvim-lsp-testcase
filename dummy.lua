@@ -8,7 +8,7 @@ configs.dummy = {
       "--save-transcript", "transcript.txt", 
       "--save-log", "log.txt" 
     };
-    filetypes = {"dummy"};
+    filetypes = {"pascal"};
     root_dir = util.root_pattern(".git");
     init_options = {}
   };
