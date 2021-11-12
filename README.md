@@ -29,7 +29,7 @@ For easier debugging, I wrote a minimal language server in Python 3
    I included example output for both cases in `transcript.good.txt` and
    `transcript.bad.txt`.
 
-# For automatic bisection
+# Automatic bisection
 
 I already did the bisection, but in case you are curious, I included the script
 I used. To use it, the repository must be cloned into the nvim sources root
@@ -39,12 +39,12 @@ folder, e.g. `~/neovim/nvim-lsp-testcase`.  Afterwards, follow steps 0 – 3 of
 To run the automatic bisection:
 ```
 git bisect start
-git bisect good <id of good-commit>
-git bisect bad <id of good-commit>
+git bisect good 5ad32885d
+git bisect bad master
 git bisect run nvim-lsp-testcase/script.sh
 ```
 
-# Results
+# Bisection result
 
 I determined that the first “bad” commit is
 ```
