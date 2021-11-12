@@ -22,9 +22,12 @@ For easier debugging, I wrote a minimal language server in Python 3
 6. In nvim versions unaffected by the bug, `transcript.txt` contains
    `contentChanged` that look like this:
    ```
-   {"method": "textDocument/didChange", "jsonrpc": "2.0", "params": {"contentChanges": [{"text": "# vim:et ft=dummy\nA\n"}], "textDocument": {"uri": "file:///home/isopod/dev/dummyls/test.pas", "version": 5}}}
+   {"method": "textDocument/didChange", "jsonrpc": "2.0", "params": {"contentChanges": ...}}}
    ```
    In nvim versions affected by the bug, those lines are *missing*.
+
+   I included example output for both cases in `transcript.good.txt` and
+   `transcript.bad.txt`.
 
 # For automatic bisection
 
@@ -41,7 +44,7 @@ git bisect bad <id of good-commit>
 git bisect run nvim-lsp-testcase/script.sh
 ```
 
-# Bisection result
+# Results
 
 I determined that the first “bad” commit is
 ```
