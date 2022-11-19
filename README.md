@@ -1,4 +1,6 @@
-# What is the problem?
+*This repo is obsolete. It contains supplementary information for NeoVim bug 16297 which was fixed on Dec 19, 2021.*
+
+# What ~is~ was the problem?
 
 In newer versions of Neovim (>0.5.0), the builtin LSP client does not send
 `contentChanged` updates to the server. As a result, language server features
